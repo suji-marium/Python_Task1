@@ -1,16 +1,18 @@
-x=input("Enter the string: ")
-length=0
-for i in x:
-    length+=1
 
-print(length)
-flag=0
-for i in range (0, length):
-    if x[i]!=x[length - i - 1]:
-        flag=1
-        break
+def palindrome(x):
 
-if flag==0:
-    print(x, "is palindrome")
+    length=0
+    for i in x:
+        length+=1
+
+    flag=0
+    for i in range (0, length):
+        if x[i]!=x[length - i - 1]:
+            return False
+    return True
+
+word=input("Enter the string: ")
+if palindrome(word):
+    print(word, "is palindrome")
 else:
-    print(x, "is not palindrome")
+    print(word, "is not palindrome")
